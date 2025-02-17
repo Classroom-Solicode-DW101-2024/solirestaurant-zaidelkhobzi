@@ -1,0 +1,46 @@
+create database SoliRestaurant
+
+
+use SoliRestaurant
+--Table CLIENT
+CREATE TABLE `client` (
+  `idClient` int PRIMARY KEY,
+  `nomCl` varchar(50) NOT NULL,
+  `prenomCl` varchar(50) DEFAULT NULL,
+  `telCl` varchar(30) NOT NULL UNIQUE
+)
+
+--Table COMMANDE
+CREATE TABLE `commande` (
+  `idCmd` char(4) PRIMARY KEY,
+  `dateCmd` datetime DEFAULT CURRENT_TIMESTAMP,
+  `Statut` varchar(100) DEFAULT 'en attente',
+  `idCl` int foreign key references CLIENT(idClient)
+) ;
+
+ALTER TABLE `commande`
+ADD CONSTRAINT `statut_check` CHECK (statut IN ('en attente','en cours','expédiée','livrée','annulée'))
+
+--Table PLAT
+CREATE TABLE `plat` (
+  `idPlat` int AUTO_INCREMENT PRIMARY KEY,
+  `nomPlat` varchar(100) NOT NULL,
+  `categoriePlat` varchar(100) NOT NULL,
+  `TypeCuisine` varchar(250) NOT NULL,
+  `prix` decimal(6,2) NOT NULL,
+  `image` varchar(500) NOT NULL
+) 
+
+ALTER TABLE `plat`
+ADD CONSTRAINT `categorie_check` CHECK (`categoriePlat`  IN ('plat principal','dessert','entrée'))
+
+ALTER TABLE `plat`
+ADD CONSTRAINT `cuisine_check` CHECK (`TypeCuisine`  IN ('Marocaine','Italienne','Chinoise','Espagnole','Francaise'))
+
+--Table COMMANDE_PLAT
+CREATE TABLE `commande_plat` (
+  `idPlat` int FOREIGN KEY references PLAT(idPlat),
+  `idCmd` char(4) FOREIGN KEY references COMMANDE(idCmd),
+  `qte` int NOT NULL,
+   PRIMARY KEY(idPlat,idCmd)
+) 
