@@ -1,0 +1,15 @@
+.logo {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 35px;
+        margin-right: 5px;
+    }
+    a {
+        color: var(--green-color);
+        margin-bottom: 0;
+        font-size: 22px;
+    }
+}

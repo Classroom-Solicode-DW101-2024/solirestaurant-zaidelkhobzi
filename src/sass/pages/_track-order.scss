@@ -1,0 +1,52 @@
+.track-order {
+    display: flex;
+    align-content: center;
+    padding-top: 24px;
+    box-shadow: 0 6px 20px 0 #00000014;
+    border-radius: 8px;
+    background-color: #ccc;
+    max-width: 1444px;
+    padding: 0;
+    margin: 64px 32px;
+    .container {
+        .left-track-order {
+            width: 50%;
+            padding-top: 24px;
+            margin: 8px 32px;
+            h2 {
+                width: 83.3333333333%;
+                color: #2e3333;
+                font-size: 40px;
+                line-height: 48px;
+            }
+            p {
+                width: 83.3333333333%;
+                font-size: 20px;
+                line-height: 30px;
+                margin-top: 16px;
+            }
+            .delivero-on {
+                margin: 48px 0 36px;
+                display: flex;
+                flex-flow: row wrap;
+                .app-store {
+                    margin-right: 4px;
+                }
+                .app-store,
+                .google-play {
+                    width: 135px;
+                    height: 40px;
+                }
+            }
+        }
+        .right-track-order {
+            width: 50%;
+            margin-left: 0;
+            padding-top: 24px;
+            margin: 8px 32px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

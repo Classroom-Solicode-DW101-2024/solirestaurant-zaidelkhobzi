@@ -1,0 +1,13 @@
+@use "../abstracts/index" as variables;
+
+nav {
+    background-color: var(--primary-color);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .sign-in {
+            margin-right: 5px;
+        }
+    }
+}

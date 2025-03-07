@@ -1,0 +1,22 @@
+<div class="container">
+    <?php include "../../dist/filter.html" ?>
+    <div class="plats">
+        <?php foreach ($groupedPlats as $typeCuisine => $plats): ?>
+        <div>
+            <h2><?= htmlspecialchars($typeCuisine) ?></h2>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <?php foreach ($plats as $plat): ?>
+            <div class="plat">
+                <img src="<?= htmlspecialchars($plat["image"]) ?>" alt="<?= htmlspecialchars($plat["nomPlat"]) ?>"
+                    style="width: 150px; height: 150px;">
+                <h3><?= htmlspecialchars($plat["nomPlat"]) ?></h3>
+                <h5><?= htmlspecialchars($plat["categoriePlat"]) ?></h5>
+                <h6><?= htmlspecialchars($plat["prix"]) ?> MAD</h6>
+                <?php include "counter_quantite.php" ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>

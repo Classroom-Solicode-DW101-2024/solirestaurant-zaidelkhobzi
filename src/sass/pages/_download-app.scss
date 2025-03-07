@@ -1,0 +1,39 @@
+.download-app {
+    background-color: #c1dade;
+    position: relative;
+    .container {
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .download-app-section {
+                .text {
+                    margin-bottom: 40px;
+                    h3 {
+                        font-size: 48px;
+                        font-weight: 800;
+                        margin-bottom: 16px;
+                    }
+                    p {
+                        font-size: 24px;
+                    }
+                }
+                .lazy-img {
+                    display: flex;
+                    img:nth-child(1) {
+                        margin-right: 15px;
+                    }
+                }
+            }
+            .download-app-section-style_image {
+                height: 453px;
+                width: 20rem;
+                margin-top: 32px;
+                div img {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

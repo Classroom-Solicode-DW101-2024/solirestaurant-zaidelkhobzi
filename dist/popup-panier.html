@@ -1,0 +1,41 @@
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Votre Commande</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Nom du Plat</th>
+                    <th>Quantite</th>
+                    <th>Prix Unitaire (MAD)</th>
+                    <th>Prix Total (MAD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $total = 0;
+                foreach ($plats as $plat):
+                    $prix_total = $plat["prix"] * $panier[$plat["idPlat"]];
+                    $total += $prix_total;
+                ?>
+                <tr>
+                    <td><?= htmlspecialchars($plat["idPlat"]) ?></td>
+                    <td><img class="img-plat" src="<?= htmlspecialchars($plat["image"]) ?>" alt="Plat"></td>
+                    <td><?= htmlspecialchars($plat["nomPlat"]) ?></td>
+                    <td><?= htmlspecialchars($panier[$plat["idPlat"]]) ?></td>
+                    <td><?= htmlspecialchars($plat["prix"]) ?> MAD</td>
+                    <td><?= htmlspecialchars($prix_total) ?> MAD</td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="text-align: right;"><strong>Total:</strong></td>
+                    <td><strong><?= htmlspecialchars($total) ?> MAD</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+@use "../abstracts/index" as abstracts;
+
+* {
+    @include abstracts.prefixer(box-sizing, border-box, webkit moz o);
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+@use "../abstracts/index" as abstracts;
+
+%style-btn {
+    height: 42px;
+    border-radius: var(--border-radius);
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+}
+
+.sign-in {
+    @include abstracts.main-btn(var(--green-color), 10px 20px);
+    @extend %style-btn;
+    &:hover {
+        background: #027a63;
+    }
+}
+
+.sign-up {
+    @include abstracts.main-btn(var(--blue-color), 10px 20px);
+    @extend %style-btn;
+    &:hover {
+        background: #005dc2;
+    }
+}

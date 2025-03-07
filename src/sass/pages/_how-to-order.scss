@@ -1,0 +1,36 @@
+@use "../abstracts/index" as abstracts;
+
+.how-to-order {
+    padding-block-start: 200px;
+    padding-block-end: 64px;
+    text-align: center;
+    .description-order {
+        margin-bottom: 10px;
+        font-weight: 400;
+        text-align: center;
+        font-size: 24px;
+    }
+    .header-order {
+        font-size: 32px;
+        color: var(--green-color);
+        font-size: 48px;
+    }
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        .card {
+            width: calc(100% / 3);
+            .icon {
+                margin-bottom: 16px;
+                svg {
+                    color: var(--green-color);
+                }
+            }
+            .head-card {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
